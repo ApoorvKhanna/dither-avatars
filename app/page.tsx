@@ -86,6 +86,21 @@ export default function DemoPage() {
           color: ${mutedCol};
         }
         .header-stats strong { color: ${fg}; font-size: 16px; display: block; }
+        .gh-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          margin-top: 12px;
+          padding: 8px 20px;
+          border: 1px solid ${borderCol};
+          border-radius: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          color: ${fg};
+          text-decoration: none;
+          transition: border-color 0.2s, color 0.2s;
+        }
+        .gh-link:hover { border-color: ${accentCol}; color: ${accentCol}; text-decoration: none; }
 
         .controls {
           display: flex;
@@ -248,6 +263,7 @@ export default function DemoPage() {
             <div><strong>2B+</strong> variants</div>
             <div><strong>0</strong> dependencies</div>
           </div>
+          <a href="https://github.com/ApoorvKhanna/dither-avatars" target="_blank" rel="noopener noreferrer" className="gh-link">GitHub</a>
         </div>
 
         <div className="controls">
@@ -313,7 +329,8 @@ export default function DemoPage() {
 
         <div className="footer">
           Pure Canvas. <strong>Zero dependencies.</strong> Deterministic from any string.<br />
-          Rose / Vortex / Jellyfish / Phoenix / Waves / Flame / Crystal / Octopus
+          Rose / Vortex / Jellyfish / Phoenix / Waves / Flame / Crystal / Octopus<br />
+          <a href="https://github.com/ApoorvKhanna/dither-avatars" target="_blank" rel="noopener noreferrer" style={{ color: accentCol, textDecoration: 'none' }}>github.com/ApoorvKhanna/dither-avatars</a>
         </div>
       </div>
     </>
