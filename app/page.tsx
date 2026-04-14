@@ -24,12 +24,17 @@ function randomName(): string {
   return `${adj}${noun}${num}`;
 }
 
-const SHAPE_NAMES = ['Rose', 'Vortex', 'Jellyfish', 'Phoenix', 'Waves', 'Flame', 'Crystal', 'Octopus'];
+const SHAPE_NAMES = [
+  'Rose', 'Vortex', 'Jellyfish', 'Phoenix', 'Waves', 'Flame', 'Crystal', 'Octopus',
+  'Fish', 'Turtle', 'Tree', 'Palm Tree', 'Planet', 'Sun', 'Snowflake', 'Mushroom',
+  'Butterfly', 'Starfish', 'Coral', 'Nautilus', 'Fern', 'Lotus', 'Tornado', 'Galaxy',
+  'Lightning', 'Cactus', 'Dandelion', 'Dragonfly', 'Seahorse', 'Amoeba', 'Eclipse', 'Seashell',
+];
 
 function shapeForName(name: string): string {
   let h = 0;
   for (let i = 0; i < name.length; i++) h = ((h << 5) - h + name.charCodeAt(i)) | 0;
-  return SHAPE_NAMES[Math.abs(h) % 8];
+  return SHAPE_NAMES[Math.abs(h) % 32];
 }
 
 function generateBatch(count: number): { name: string; anim: AnimationFn }[] {
@@ -253,11 +258,11 @@ export default function DemoPage() {
         <div className="header">
           <h1>Dither <span>Avatars</span></h1>
           <p>
-            Procedural halftone avatars. 8 shapes, billions of variants.
+            Procedural halftone avatars. 32 shapes, billions of variants.
             Type any name to generate a unique, deterministic, animated identity.
           </p>
           <div className="header-stats">
-            <div><strong>8</strong> shapes</div>
+            <div><strong>32</strong> shapes</div>
             <div><strong>2B+</strong> variants</div>
             <div><strong>0</strong> dependencies</div>
           </div>
@@ -329,7 +334,7 @@ export default function DemoPage() {
 
         <div className="footer">
           Pure Canvas. <strong>Zero dependencies.</strong> Deterministic from any string.<br />
-          Rose / Vortex / Jellyfish / Phoenix / Waves / Flame / Crystal / Octopus<br />
+          Rose / Vortex / Jellyfish / Phoenix / Waves / Flame / Crystal / Octopus / Fish / Turtle / Tree / Palm Tree / Planet / Sun / Snowflake / Mushroom / Butterfly / Starfish / Coral / Nautilus / Fern / Lotus / Tornado / Galaxy / Lightning / Cactus / Dandelion / Dragonfly / Seahorse / Amoeba / Eclipse / Seashell<br />
           <a href="https://github.com/ApoorvKhanna/dither-avatars" target="_blank" rel="noopener noreferrer" style={{ color: accentCol, textDecoration: 'none' }}>github.com/ApoorvKhanna/dither-avatars</a>
         </div>
       </div>
